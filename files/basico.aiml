@@ -1,15 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+<!--Alfonso Macedo Flores 23/11/2023 -->
 	<category>
 	    <pattern>HOLA</pattern>
-	    <template>Bienvenid@. ¿Quieres saber cuáles son las entradas o vamos a la sopa?</template>
+	    <template>
+	        <random>
+	            <li>Bienvenid@. ¿Quieres saber cuáles son las entradas o vamos a la sopa?</li>
+	            <li>Buen día ¿toma entrada o empieza con la sopa?</li>
+	            <li>Sea bienvenid@. ¿le digo las entradas o pasamos a la sopa?</li>
+	            <li>Muy buen día ¿quiere saber las entradas o elige sopa de una vez?</li>
+	        </random>
+	    </template>
 	</category>
 	<category>
 	    <pattern>ENTRADAS</pattern>
 	    <template>Tenemos palitos de apio, ensalada o fruta picada</template>
 	</category>
 	<category>
-	    <pattern>SOPA</pattern>
+	    <pattern>* SOPA</pattern>
 	    <template>¿Quieres sopa del día o consomé?</template>
 	</category>
+	<category>
+	    <pattern>* SOPA DEL DÍA</pattern>
+	    <template>Excelente, ¿Le traigo tortillas o pan?</template>
+	</category>
+	<category>
+	    <pattern>* PAN</pattern>
+	    <template>Ok en un momento le traeré el pan</template>
+	    <that>Excelente, ¿Le traigo tortillas o pan</that>
+	</category>
+	<category>
+	    <pattern>* TORTILLA</pattern>
+	    <template>Bien iré por las tortillas</template>
+	    <that>Excelente, ¿Le traigo tortillas o pan</that>
+	</category>
+	<category>
+	    <pattern>CONSOMÉ</pattern>
+	    <template> De acuerdo se lo llevaré de inmediato</template>
+	</category>
+	<category>
+	    <pattern>* ENTRADAS</pattern>
+	    <template>
+	        <srai>ENTRADAS</srai>
+	    </template>
+	</category>
+	<category>
+	    <pattern>* PLATO FUERTE</pattern>
+	    <template>Tenemos carne adobada o pechuga de pollo</template>
+	</category>
+	<category>
+	    <pattern>* CARNE ADOBADA</pattern>
+	    <template>De acuerdo, en un momento se la traemos</template>
+	</category>
+	<category>
+	    <pattern>* PECHUGA DE POLLO</pattern>
+	    <template>Ok, ¿le gustaría limón o salsa?</template>
+	</category>
+	<category>
+	    <pattern>LIMÓN</pattern>
+	    <template>Ok en un momento le traeré los limones</template>
+	    <that>Ok, ¿le gustaría limón o salsa</that>
+	</category>
+	<category>
+	    <pattern>SALSA</pattern>
+	    <template>Esta bien le traeré la salsa</template>
+	    <that>Ok, ¿le gustaría limón o salsa</that>
+	</category>
+	<category>
+	    <pattern>* POSTRE</pattern>
+	    <template>Tenemos helado de franbuesa, ¿le gustaría uno?</template>
+	</category>
+	<category>
+	    <pattern>SI</pattern>
+	    <template>Ok en un momento le traigo su helado</template>
+	    <that>Tenemos helado de franbuesa, ¿le gustaría uno</that>
+	</category>
+	<category>
+	    <pattern>NO</pattern>
+	    <template>Esta bien, cualquier otra cosa que quiera que le traigamos nos avisa</template>
+	    <that>Tenemos helado de franbuesa, ¿le gustaría uno</that>
+	</category>
+	<category>
+	    <pattern>* CUENTA</pattern>
+	    <template>Ok, ¿en efectivo o tarjeta?</template>
+	</category>
+	<category>
+	    <pattern>EFECTIVO</pattern>
+	    <template>Ok, serían unos $2000 por todo</template>
+	    <that>Ok, ¿en efectivo o tarjeta</that>
+	</category>
+	<category>
+	    <pattern>TARJETA</pattern>
+	    <template>Ok, permitamé traer la terminal, bien serían $2000 pesos por todo</template>
+	    <that>Ok, ¿en efectivo o tarjeta</that>
+	</category>
+	<category>
+	    <pattern>* NOS VEMOS</pattern>
+	    <template>
+	        <random>
+	            <li>Muchas gracias por estar con nosotros, que tenga un buen día</li>
+	            <li>Esperamos que hayan disfrutado su comida, ¡Vuelva pronto!!</li>
+	            <li>Gracias por elegirnos, ¡nuestro trabajo siempre es servirte un plato!</li>
+	        </random>
+	    </template>
+	</category>
+	<category>
+	    <pattern>LA * ESTÁ FRÍA</pattern>
+	    <template>Una enorme disculpa, llevo su <star/>a calentar</template>
+	</category>
+	<category>
+	    <pattern>LA * ESTÁ CRUDA</pattern>
+	    <template>Una enorme disculpa, llevo su <star/>a que la vuelvan a cocinar</template>
+	</category>
+	<category>
+	    <pattern>MI * SE DERRITIÓ</pattern>
+	    <template>Una enorme disculpa, le vulevo a traer su <star/></template>
+	</category>
+	
 </aiml>
